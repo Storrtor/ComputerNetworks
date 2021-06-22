@@ -64,7 +64,7 @@ public class lesson2 {
      * Можно узнать все о сети и поднастроить сеть (через putty в жизни делается)
      *
      *
-     *
+     * https://www.netacad.com/portal/resources/packet-tracer - скачка циско
      *
      */
 
