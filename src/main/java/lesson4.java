@@ -74,8 +74,9 @@ public class lesson4 {
      * 5) router-id (уникальный номер, похож на апйпи адрес, но просто номер)
      * 6) network - обьявляю сети которыми хочу делиться со своими соседями
      *
+     * clear ip ospf process - для перестройки сетей ospf
      * Команды инфо:
-     * show ip ospf
+     * show ip ospfща
      * show ip ospf neighbor
      * show ip ospf
      * show ip route ospf - табл маршрутизации по оспф
@@ -86,4 +87,5 @@ public class lesson4 {
      *
      *
      */
+
 }

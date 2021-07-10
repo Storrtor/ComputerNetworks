@@ -26,6 +26,20 @@ public class lesson6 {
      * страничка открывается по публичному айпи при нате
      * + трасерт гре
      *
+     * info:
+     * show ip nat translations
+     *
+     * Настройка НАТ: 1:42:00 настройка ната
+     * - conf t
+     * - ip access-list standard 'NAME'
+     * -- permit (сеть/wildCard)
+     * - ip nat inside source list 'NAME' interface fastE 0/1 (выходящий)
+     * - interface входящий в роутер из приватки
+     * -- ip nat inside
+     * - interface выходящий из роутера
+     * --ip nat outside
+     *
+     *
      *
      *
      *
