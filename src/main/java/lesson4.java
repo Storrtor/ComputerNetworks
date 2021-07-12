@@ -76,9 +76,8 @@ public class lesson4 {
      *
      * clear ip ospf process - для перестройки сетей ospf
      * Команды инфо:
-     * show ip ospfща
-     * show ip ospf neighbor
      * show ip ospf
+     * show ip ospf neighbor
      * show ip route ospf - табл маршрутизации по оспф
      * show ip route - вся табла маршрутизации
      *

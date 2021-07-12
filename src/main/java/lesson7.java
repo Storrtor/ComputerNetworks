@@ -51,13 +51,16 @@ public class lesson7 {
      * - permit ip srs_ip wild card dst_ip wild card
      * обратно:
      * - permit ip dst_ip wild card src_ip wild card
+     * ex
      *
      * - crypto map MAP1 10 ipsec-isakmp
      * - match address NET_10_to_172
+     * ex
      *
      * interface (внешний) у настраиваемого роутера
      * - crypto map MAP1
      * (ЛОГ *Jan  3 07:16:26.785: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is ON)
+     * ex
      *
      * - ip route 0.0.0.0 0.0.0.0 1.1.1.2 (1.1.1.2 - адрес следующего хопа)
      * если сессия исчетечет на мапе (положить/поднять линк, перезапуск, в трансляции сказано крч)
