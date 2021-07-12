@@ -25,30 +25,50 @@ public class lesson7 {
      * Команды для ipsek-шифрования:
      * - crypto isakmp policy 1 (имена полиси должно быть разная
      *  на разных роутерах, а политика шифрования одинаковая)
-     *  - authint pre-share
+     *  - authentication pre-share
      *  - encryption aes
      *  ex
      *  - crypto isakmp key QWEERTY1 address (публичный адрес встречного роутера)
      *
+     * Параметры для шифруемого трафика
      * esp пакетики - пакетики с зашифрованными данными
      * Параметры для шифрования трафика:
-     * - crypto ispec transform-set "имя:" AES128-SHA esp-aes esp-sha-hmac
+     * - crypto ipsec transform-set "имя:" AES128-SHA esp-aes esp-sha-hmac
      *
+     * Карта связывваемости
      * - crypto map MAP1 10 ipsec-isakmp
      * (для задания со звездочкой внимательно посмотреть мап - сикввенс)
      *
      * - description Encryption_to_R6_stelmakh_10/07
      * - set peer 6.6.6.6 (внешний айпи роутера вхожденного в ту сеть с которой коннектимся)
      * - set transform-set AES128-SHA
+     * ex
      *
      * - ip access-list extended NET_10_to_10
+     * 1) extended list - смотрит на айпи соурс и дистанейшен
+     * 2) standart list - смотрит только на айпи соурс
      * туда:
      * - permit ip srs_ip wild card dst_ip wild card
      * обратно:
      * - permit ip dst_ip wild card src_ip wild card
      *
-     * - crypto map MAP1 10 ispec-isa (дальше пропустила, надо дополнять)
+     * - crypto map MAP1 10 ipsec-isakmp
+     * - match address NET_10_to_172
      *
+     * interface (внешний) у настраиваемого роутера
+     * - crypto map MAP1
+     * (ЛОГ *Jan  3 07:16:26.785: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is ON)
+     *
+     * - ip route 0.0.0.0 0.0.0.0 1.1.1.2 (1.1.1.2 - адрес следующего хопа)
+     * если сессия исчетечет на мапе (положить/поднять линк, перезапуск, в трансляции сказано крч)
+     *
+     * инфо:
+     * show crypto isakmp sa
+     * sh crypto map
+     * sh crypto ipsec sa
+     *
+     * У сессии есть время жизни, может исчтечь, лечится падением линка (возможно)
+     * или сменой ключа (QWERTY123)
      *
      *
      *
