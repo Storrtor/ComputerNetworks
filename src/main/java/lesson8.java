@@ -74,7 +74,7 @@ public class lesson8 {
      * .com
      * .org
      *
-     * https://linkmeup.ru - начинющая для сетевых инженеров
+     * https://linkmeup.ru - начинющая для сетевых инженеров (сети для самых маленьких)
      *
      */
 }
